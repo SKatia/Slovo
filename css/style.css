@@ -245,6 +245,7 @@ nav a {
 
 /****** Footer ***********/
 footer {
+  background-color: var(--main-bg-color);
   text-align: center;
 }
 
