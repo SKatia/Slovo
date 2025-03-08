@@ -4,9 +4,9 @@
 }
 
 :root {
-    --main-color: #fc0000;
-    --main-bg-color: #F2F2F2;
-    --filter-bg-color: #DEEBFF;
+    --main-color: #0065FC;
+    --footer-color: #e1f5fe;
+    --light-color: #DEEBFF;
 }
 
 .fa-solid {
@@ -29,26 +29,28 @@ a {
     color: inherit;
     text-decoration: none;
 }
-  
+
 // .section-title {
 //     margin: 0;
 //     font-size: 22px;
 // }
 
-h1{
+h1 {
     font-size: 40px;
     margin-bottom: 8px;
     text-align: center;
 }
-h2, h3 {
+
+h2,
+h3 {
     // font-size: 28px;
     text-align: center;
 }
 
 /****** Header ***********/
-header{
+header {
     display: flex;
-    justify-content:space-between
+    justify-content: space-between
 }
 
 nav {
@@ -59,229 +61,197 @@ nav {
 }
 
 nav a:hover {
-    color: var(--main-color);
+    //color: white;//var(--main-color);
     //border-top: 2px solid var(--main-color);
-    border-bottom: 3px solid var(--main-color);
-    // background-color: var(--main-color);
+    //border-bottom: 3px solid var(--main-color);
+    background-color: var(--light-color);
 }
 
-nav a{
+nav a {
     margin-right: 30px;
     padding-top: 20px;
     border-top: 2px solid transparent;
-} 
+}
 
-.logo >img{ 
+.logo>img {
     width: 61px;
 }
+
 //.logo {
-    // display: flex;
-    // padding-top: 30px;
-    // padding-bottom: 30px;
+// display: flex;
+// padding-top: 30px;
+// padding-bottom: 30px;
 //}
 
 
 #accueil {
-padding: 20px;
-text-align: center;
-background-color: var(--filter-bg-color);
-border-radius: 10px;
-p{
-    //margin-top: 0;
-    font-size: 1em;
-    line-height: 1.8;
-    // background-image: url("../images/samovar.jpg");
-} 
-img {
-    width: 100%;
-    height: auto; /* Сохранит пропорции */
-    display: block; /* Убирает лишние отступы снизу */
-    border-style: solid;
-    border-width: 5px;
-    border-color: yellow;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--light-color);
     border-radius: 10px;
-  }
+    margin: 5px;
+
+    p {
+        //margin-top: 0;
+        font-size: 1em;
+        line-height: 1.8;
+        // background-image: url("../images/samovar.jpg");
+        //text-align: justify;
+    }
+
+    ul {
+        list-style: none; /* Убираем стандартные маркеры списка */
+        padding: 0;
+    }
+    
+    li {
+        display: flex;
+        justify-content: center;
+        gap: 10px; /* Добавляем отступ между иконкой и текстом */
+        margin-bottom: 10px;
+    }
+    
+    li img {
+        width: 24px; /* Устанавливаем размер иконок */
+        height: 24px;
+    }
+
+    #apropos {
+        display: flex;
+        flex-direction: row;
+    
+        #img-presentation {
+            width: 300px;
+            height: auto;
+            padding: 10px;
+            border-radius: 50%;
+            object-fit: cover;
+    }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        /* Сохранит пропорции */
+        display: block;
+        /* Убирает лишние отступы снизу */
+        // border-style: solid;
+        border-width: 5px;
+        // border-color: yellow;
+         border-radius: 10px;
+    }
+
 }
 
 
-/****** Hebergements And Populaires ***********/
+
+
 .cours {
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(250, 250, 3, 0.196);
+    border-radius: 10px;
+    margin: 5px;
     // display: flex;
     // justify-content: space-between;
     // padding-top: 15px;
     // padding-bottom: 15px;
-  /* padding: 30px; */
+    /* padding: 30px; */
 }
 
-.hebergements-and-populaires section {
-    background-color: var(--main-bg-color);
-    border-radius: 20px;
-    padding: 30px;
-    box-sizing: border-box;
+
+.grid-paysages {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px;
+    gap: 15px;
 }
 
-/****** Hebergements ***********/
-.hebergements {
-    width: 65%;
-}
-.hebergements-cards {
-    display:flex;    
-    justify-content: space-between;
-    flex-wrap: wrap;
+.grid-portraits {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px 300px;
+    gap: 15px;
 }
 
-.hebergements-cards .card {
+.grid-paysages img,
+.grid-portraits img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lien-conteneur-photo {
+    position: relative;
+}
+
+.photo-container:hover img {
+    transform: scale(2);
+    /* Увеличиваем изображение */
+}
+
+.photo-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
-    margin-top: 33px;
-    flex-direction: column;
-}
-
-.hebergements-cards img {
-    width: 240px; 
-    height: 120px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-
-.hebergements-cards .card-content {
-    padding-left: 15px;
-    display: flex;
-    flex-direction: column;
-    /*justify-content: space-between;*/
-    box-sizing: border-box;
-}
-
-.hebergements-cards .card-title {
-    margin-top: 10px;
-    margin-bottom: 4px;
-}
-
-.hebergements-cards .card-subtitle {
-    margin: 0;
-}
-
-.hebergements-cards .card-rating {
-    margin-bottom: 5px;
-}
-
-.hebergements-footer h3{
-    margin-bottom: 0;
-}
-/****** Populaires ***********/
-.populaires {
-    width: 32%;
-}
-
-.populaires-title {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    //transform: scale(1.2); /* Увеличиваем изображение */
+    display: none;
 }
 
-.populaires-cards .card {
+.lien-conteneur-photo:hover .photo-hover {
     display: flex;
-    margin-top: 33px;
-}
-
-.populaires-cards img {
-    width: 33%;
-    height: 136px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-
-.populaires-cards .card-content {
-    width: 67%;
-    padding-left: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
-}
-
-.populaires-cards .card-title {
-    margin-top: 10px;
-    margin-bottom: 4px;
-}
-
-.populaires-cards .card-subtitle {
-    margin: 0;
-}
-
-.populaires-cards .card-rating {
-    margin-bottom: 5px;
-}
-
-/****** Activités ***********/
-.activites {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding: 30px; 
-    box-sizing: border-box;
-}
-
-.activites-cards {
-    display:flex;    
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-/*change fields of class .card*/
-.activites-cards .card {
-    padding: 0;
-    margin-top: 33px;
-}
-
-.activites-cards img {
-    width: 280px; 
-    height: 340px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-
-.activites-cards .card-content {
-    /* padding-left: 15px; */
-    display: flex;
-    flex-direction: column;
-    /*justify-content: space-between;*/
-    box-sizing: border-box;
-}
-
-.activites-cards .card-title {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 20px;
-}
-
-.activites-cards .card-subtitle {
-    margin: 0;
-}
-
-.activites-cards .card-rating {
-    margin-bottom: 5px;
 }
 
 /****** Footer ***********/
 footer {
-    // display: flex;
-    // justify-content: start;
-    background-color:var(--main-bg-color);
-    // padding: 15px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--footer-color);
+    padding: 10px;
+    padding-left: 0;
+    border-radius: 10px;
+    // text-align: center;
 }
-.card-footer {
-    width: 440px;
+
+footer a {
+    margin: 1em 0;
+    // display: flex; /* Чтобы SVG вел себя как нормальный блок */
+    // align-items: center;
+}
+
+// .card-footer {
+//     width: 440px;
+
+a svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+a:hover svg {
+    transform: scale(1.2);
+    /* Увеличение при наведении */
+}
+
+footer svg {
+    display: block;
+    /* Избегаем пустых inline-отступов */
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
-@media (max-width: 1024px) and (min-width: 767.98px) {
-}
+@media (max-width: 1024px) and (min-width: 767.98px) {}
 
 /* Small devices (phones, less than 768px) */
 
-@media (max-width: 767.98px) {
-}
-    
+@media (max-width: 767.98px) {}
